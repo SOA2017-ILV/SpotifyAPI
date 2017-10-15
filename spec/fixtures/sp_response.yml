@@ -1048,7 +1048,7 @@ https://api.spotify.com/v1/artists/0du5cEVh5yTK9QJze8zA0C:
     spotify: https://open.spotify.com/artist/0du5cEVh5yTK9QJze8zA0C
   followers:
     href: 
-    total: 8155186
+    total: 8157496
   genres:
   - dance pop
   - pop
@@ -1070,3 +1070,7 @@ https://api.spotify.com/v1/artists/0du5cEVh5yTK9QJze8zA0C:
   popularity: 92
   type: artist
   uri: spotify:artist:0du5cEVh5yTK9QJze8zA0C
+https://api.spotify.com/v1/artists/foo:
+  error:
+    status: 400
+    message: invalid id

@@ -46,13 +46,13 @@ access_token = get_auth_token(config)
 track_url = sp_api_path('v1/tracks/6b8Be6ljOzmkOmFslEb23P')
 sp_response[track_url] = call_sp_url(access_token, track_url)
 track = sp_response[track_url]
-sp_results[track_url] = {}
-sp_results[track_url]['name'] = track['name']
-sp_results[track_url]['duration_ms'] = track['duration_ms']
-sp_results[track_url]['id'] = track['id']
-sp_results[track_url]['artists'] = track['artists'].map { |artist| {name: artist['name'], id: artist['id'], artist_url: artist['external_urls']['spotify']}}
-sp_results[track_url]['album'] = {name: track['album']['name'], id: track['album']['id'], album_url: track['album']['external_urls']['spotify'], image_url: track['album']['images']}
-sp_results[track_url]['track_url'] = track['external_urls']['spotify']
+sp_results[track['id']] = {}
+sp_results[track['id']]['name'] = track['name']
+sp_results[track['id']]['duration_ms'] = track['duration_ms']
+sp_results[track['id']]['id'] = track['id']
+sp_results[track['id']]['artists'] = track['artists'].map { |artist| {name: artist['name'], id: artist['id'], artist_url: artist['external_urls']['spotify']}}
+sp_results[track['id']]['album'] = {name: track['album']['name'], id: track['album']['id'], album_url: track['album']['external_urls']['spotify'], image_url: track['album']['images']}
+sp_results[track['id']]['track_url'] = track['external_urls']['spotify']
 
 #BAD URL
 bad_track_url = sp_api_path('v1/tracks/foo')
@@ -62,15 +62,15 @@ album_url = sp_api_path('v1/albums/4PgleR09JVnm3zY1fW3XBA')
 sp_response[album_url] = call_sp_url(access_token, album_url)
 album = sp_response[album_url]
 
-sp_results[album_url] = {}
-sp_results[album_url]["name"] = album["name"]
-sp_results[album_url]["id"] = album["id"]
-sp_results[album_url]["album_url"] = album["external_urls"]["spotify"]
-sp_results[album_url]["genres"] = album["genres"]
-sp_results[album_url]["images"] = album["images"]
-sp_results[album_url]["tracks"] = album["tracks"]["items"].map { |track| {name: track["name"], duration_ms: track["duration_ms"], track_url: track["external_urls"]["spotify"], id: track["id"], track_number: track["track_number"], disc_number: track["disc_number"] }}
-sp_results[album_url]["artists"] = album["artists"].map { |artist| {name: artist["name"], id: artist["id"], artist_url: artist["external_urls"]["spotify"]}}
-sp_results[album_url]["total_tracks"] = album["tracks"]["total"]
+sp_results[album['id']] = {}
+sp_results[album['id']]["name"] = album["name"]
+sp_results[album['id']]["id"] = album["id"]
+sp_results[album['id']]["album_url"] = album["external_urls"]["spotify"]
+sp_results[album['id']]["genres"] = album["genres"]
+sp_results[album['id']]["images"] = album["images"]
+sp_results[album['id']]["tracks"] = album["tracks"]["items"].map { |track| {name: track["name"], duration_ms: track["duration_ms"], track_url: track["external_urls"]["spotify"], id: track["id"], track_number: track["track_number"], disc_number: track["disc_number"] }}
+sp_results[album['id']]["artists"] = album["artists"].map { |artist| {name: artist["name"], id: artist["id"], artist_url: artist["external_urls"]["spotify"]}}
+sp_results[album['id']]["total_tracks"] = album["tracks"]["total"]
 
 bad_album_url = sp_api_path('v1/albums/foo')
 sp_response[bad_album_url] = call_sp_url(access_token, bad_album_url)
@@ -79,12 +79,16 @@ artist_url = sp_api_path('v1/artists/0du5cEVh5yTK9QJze8zA0C')
 sp_response[artist_url] = call_sp_url(access_token, artist_url)
 artist = sp_response[artist_url]
 
-sp_results[artist_url] = {}
-sp_results[artist_url]["id"] = artist["id"]
-sp_results[artist_url]["name"] = artist["name"]
-sp_results[artist_url]["genres"] = artist["genres"]
-sp_results[artist_url]["artist_url"] = artist["external_urls"]["spotify"]
-sp_results[artist_url]["images"] = artist["images"]
+sp_results[artist['id']] = {}
+sp_results[artist['id']]["id"] = artist["id"]
+sp_results[artist['id']]["name"] = artist["name"]
+sp_results[artist['id']]["genres"] = artist["genres"]
+sp_results[artist['id']]["artist_url"] = artist["external_urls"]["spotify"]
+sp_results[artist['id']]["images"] = artist["images"]
+
+
+bad_artist_url = sp_api_path('v1/artists/foo')
+sp_response[bad_artist_url] = call_sp_url(access_token, bad_track_url)
 
 
 File.write('spec/fixtures/sp_response.yml', sp_response.to_yaml)
