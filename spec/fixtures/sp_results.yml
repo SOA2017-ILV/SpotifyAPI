@@ -1,0 +1,118 @@
+---
+https://api.spotify.com/v1/tracks/6b8Be6ljOzmkOmFslEb23P:
+  name: 24K Magic
+  duration_ms: 225983
+  id: 6b8Be6ljOzmkOmFslEb23P
+  artists:
+  - :name: Bruno Mars
+    :id: 0du5cEVh5yTK9QJze8zA0C
+    :artist_url: https://open.spotify.com/artist/0du5cEVh5yTK9QJze8zA0C
+  album:
+    :name: 24K Magic
+    :id: 4PgleR09JVnm3zY1fW3XBA
+    :album_url: https://open.spotify.com/album/4PgleR09JVnm3zY1fW3XBA
+    :image_url:
+    - height: 640
+      url: https://i.scdn.co/image/bf41f93f8c895eff007b88bd2e23e12dfe078792
+      width: 640
+    - height: 300
+      url: https://i.scdn.co/image/63ddbd647a5a4e672da6b6eb29cfc38c985bffca
+      width: 300
+    - height: 64
+      url: https://i.scdn.co/image/f77f484d87a4b84e611af30011c381f9ccef0d0b
+      width: 64
+  track_url: https://open.spotify.com/track/6b8Be6ljOzmkOmFslEb23P
+https://api.spotify.com/v1/albums/4PgleR09JVnm3zY1fW3XBA:
+  name: 24K Magic
+  id: 4PgleR09JVnm3zY1fW3XBA
+  album_url: https://open.spotify.com/album/4PgleR09JVnm3zY1fW3XBA
+  genres: []
+  images:
+  - height: 640
+    url: https://i.scdn.co/image/bf41f93f8c895eff007b88bd2e23e12dfe078792
+    width: 640
+  - height: 300
+    url: https://i.scdn.co/image/63ddbd647a5a4e672da6b6eb29cfc38c985bffca
+    width: 300
+  - height: 64
+    url: https://i.scdn.co/image/f77f484d87a4b84e611af30011c381f9ccef0d0b
+    width: 64
+  tracks:
+  - :name: 24K Magic
+    :duration_ms: 225983
+    :track_url: https://open.spotify.com/track/6b8Be6ljOzmkOmFslEb23P
+    :id: 6b8Be6ljOzmkOmFslEb23P
+    :track_number: 1
+    :disc_number: 1
+  - :name: Chunky
+    :duration_ms: 186973
+    :track_url: https://open.spotify.com/track/0mBKv9DkYfQHjdMcw2jdyI
+    :id: 0mBKv9DkYfQHjdMcw2jdyI
+    :track_number: 2
+    :disc_number: 1
+  - :name: Perm
+    :duration_ms: 210053
+    :track_url: https://open.spotify.com/track/1I6pKIyaBp4OebTGLJpCCC
+    :id: 1I6pKIyaBp4OebTGLJpCCC
+    :track_number: 3
+    :disc_number: 1
+  - :name: That's What I Like
+    :duration_ms: 206693
+    :track_url: https://open.spotify.com/track/0KKkJNfGyhkQ5aFogxQAPU
+    :id: 0KKkJNfGyhkQ5aFogxQAPU
+    :track_number: 4
+    :disc_number: 1
+  - :name: Versace On The Floor
+    :duration_ms: 261240
+    :track_url: https://open.spotify.com/track/0kN8xEmgMW9mh7UmDYHlJP
+    :id: 0kN8xEmgMW9mh7UmDYHlJP
+    :track_number: 5
+    :disc_number: 1
+  - :name: Straight Up & Down
+    :duration_ms: 198186
+    :track_url: https://open.spotify.com/track/2mrZYZGmPFV3QOyYPZ1zsn
+    :id: 2mrZYZGmPFV3QOyYPZ1zsn
+    :track_number: 6
+    :disc_number: 1
+  - :name: Calling All My Lovelies
+    :duration_ms: 250080
+    :track_url: https://open.spotify.com/track/6ObpR8ek44tvWefQRcSo8K
+    :id: 6ObpR8ek44tvWefQRcSo8K
+    :track_number: 7
+    :disc_number: 1
+  - :name: Finesse
+    :duration_ms: 191000
+    :track_url: https://open.spotify.com/track/5XMkENs3GfeRza8MfVAhjK
+    :id: 5XMkENs3GfeRza8MfVAhjK
+    :track_number: 8
+    :disc_number: 1
+  - :name: Too Good To Say Goodbye
+    :duration_ms: 281826
+    :track_url: https://open.spotify.com/track/0B0tYbVp7pDQAqKDhgMeaL
+    :id: 0B0tYbVp7pDQAqKDhgMeaL
+    :track_number: 9
+    :disc_number: 1
+  artists:
+  - :name: Bruno Mars
+    :id: 0du5cEVh5yTK9QJze8zA0C
+    :artist_url: https://open.spotify.com/artist/0du5cEVh5yTK9QJze8zA0C
+  total_tracks: 9
+https://api.spotify.com/v1/artists/0du5cEVh5yTK9QJze8zA0C:
+  id: 0du5cEVh5yTK9QJze8zA0C
+  name: Bruno Mars
+  genres:
+  - dance pop
+  - pop
+  - pop rap
+  - post-teen pop
+  artist_url: https://open.spotify.com/artist/0du5cEVh5yTK9QJze8zA0C
+  images:
+  - height: 640
+    url: https://i.scdn.co/image/aa32d6d4ca2467974403518dd3ebfe8831c5ced1
+    width: 640
+  - height: 320
+    url: https://i.scdn.co/image/63cad86cb183568085a4e5f0be86aa187cc511e4
+    width: 320
+  - height: 160
+    url: https://i.scdn.co/image/5461dcbb3f23e1df62d85c8273fc49cc4edd49d5
+    width: 160
