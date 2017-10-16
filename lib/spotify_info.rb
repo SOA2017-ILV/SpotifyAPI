@@ -28,10 +28,10 @@ def get_auth_token(config)
   https = Net::HTTP.new(uri.host, uri.port)
   https.use_ssl = true
   req = Net::HTTP::Post.new(uri.path, initheader = auth_header(config))
-  request_body = URI.encode_www_form({grant_type: 'client_credentials'})
+  request_body = URI.encode_www_form(grant_type: 'client_credentials')
   req.body = request_body
   res = https.request(req)
-  JSON.parse(res.body)["access_token"]
+  JSON.parse(res.body)['access_token']
 end
 
 def auth_header(config)
@@ -63,14 +63,14 @@ sp_response[album_url] = call_sp_url(access_token, album_url)
 album = sp_response[album_url]
 
 sp_results[album['id']] = {}
-sp_results[album['id']]["name"] = album["name"]
-sp_results[album['id']]["id"] = album["id"]
-sp_results[album['id']]["album_url"] = album["external_urls"]["spotify"]
-sp_results[album['id']]["genres"] = album["genres"]
-sp_results[album['id']]["images"] = album["images"]
-sp_results[album['id']]["tracks"] = album["tracks"]["items"].map { |track| {name: track["name"], duration_ms: track["duration_ms"], track_url: track["external_urls"]["spotify"], id: track["id"], track_number: track["track_number"], disc_number: track["disc_number"] }}
-sp_results[album['id']]["artists"] = album["artists"].map { |artist| {name: artist["name"], id: artist["id"], artist_url: artist["external_urls"]["spotify"]}}
-sp_results[album['id']]["total_tracks"] = album["tracks"]["total"]
+sp_results[album['id']]['name'] = album['name']
+sp_results[album['id']]['id'] = album['id']
+sp_results[album['id']]['album_url'] = album['external_urls']['spotify']
+sp_results[album['id']]['genres'] = album['genres']
+sp_results[album['id']]['images'] = album['images']
+sp_results[album['id']]['tracks'] = album['tracks']['items'].map { |track| {name: track['name'], duration_ms: track['duration_ms'], track_url: track['external_urls']['spotify'], id: track['id'], track_number: track['track_number'], disc_number: track['disc_number'] }}
+sp_results[album['id']]['artists'] = album['artists'].map { |artist| {name: artist['name'], id: artist['id'], artist_url: artist['external_urls']['spotify']}}
+sp_results[album['id']]['total_tracks'] = album['tracks']['total']
 
 bad_album_url = sp_api_path('v1/albums/foo')
 sp_response[bad_album_url] = call_sp_url(access_token, bad_album_url)
@@ -80,16 +80,14 @@ sp_response[artist_url] = call_sp_url(access_token, artist_url)
 artist = sp_response[artist_url]
 
 sp_results[artist['id']] = {}
-sp_results[artist['id']]["id"] = artist["id"]
-sp_results[artist['id']]["name"] = artist["name"]
-sp_results[artist['id']]["genres"] = artist["genres"]
-sp_results[artist['id']]["artist_url"] = artist["external_urls"]["spotify"]
-sp_results[artist['id']]["images"] = artist["images"]
-
+sp_results[artist['id']]['id'] = artist['id']
+sp_results[artist['id']]['name'] = artist['name']
+sp_results[artist['id']]['genres'] = artist['genres']
+sp_results[artist['id']]['artist_url'] = artist['external_urls']['spotify']
+sp_results[artist['id']]['images'] = artist['images']
 
 bad_artist_url = sp_api_path('v1/artists/foo')
 sp_response[bad_artist_url] = call_sp_url(access_token, bad_track_url)
-
 
 File.write('spec/fixtures/sp_response.yml', sp_response.to_yaml)
 File.write('spec/fixtures/sp_results.yml', sp_results.to_yaml)

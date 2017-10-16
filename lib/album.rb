@@ -3,7 +3,7 @@ require_relative 'track.rb'
 
 module SpotifyModule
   # Model for Album
-  class Album
+  class Album    
     def initialize(album_data)
       @album = album_data
     end
@@ -21,7 +21,7 @@ module SpotifyModule
     end
 
     def artists
-      @album["artists"].map { |artist| {name: artist["name"], id: artist["id"], artist_url: artist["external_urls"]["spotify"]}}
+      @album['artists'].map { |artist| {name: artist['name'], id: artist['id'], artist_url: artist['external_urls']['spotify']}}
     end
 
     def images
@@ -29,15 +29,15 @@ module SpotifyModule
     end
 
     def tracks
-      @album["tracks"]["items"].map { |track| {name: track["name"], duration_ms: track["duration_ms"], track_url: track["external_urls"]["spotify"], id: track["id"], track_number: track["track_number"], disc_number: track["disc_number"] }}
+      @album['tracks']['items'].map { |track| { name: track['name'], duration_ms: track['duration_ms'], track_url: track['external_urls']['spotify'], id: track['id'], track_number: track['track_number'], disc_number: track['disc_number'] }}
     end
 
     def total_tracks
-      @album['tracks']["total"]
+      @album['tracks']['total']
     end
 
     def album_url
-      @album['external_urls']["spotify"]
+      @album['external_urls']['spotify']
     end
   end
 end

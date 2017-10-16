@@ -55,8 +55,8 @@ module SpotifyModule
       uri = URI(TOKEN_URI)
       https = Net::HTTP.new(uri.host, uri.port)
       https.use_ssl = true
-      req = Net::HTTP::Post.new(uri.path, initheader = auth_header(client_id, client_secret))
-      request_body = URI.encode_www_form({grant_type: 'client_credentials'})
+      req = Net::HTTP::Post.new(uri.path, auth_header(client_id, client_secret))
+      request_body = URI.encode_www_form(grant_type: 'client_credentials')
       req.body = request_body
       res = https.request(req)
       JSON.parse(res.body)['access_token']
@@ -71,22 +71,22 @@ module SpotifyModule
       API_URI + path
     end
 
-    def call_sp_url(url) 
+    def call_sp_url(url)
       uri = URI(url)
       https = Net::HTTP.new(uri.host, uri.port)
       https.use_ssl = true
-      req = Net::HTTP::Get.new(uri.path, initheader = {"Authorization" => "Bearer #{@access_token}"})
+      req = Net::HTTP::Get.new(uri.path, 'Authorization' => "Bearer #{@access_token}")
       res = https.request(req)
       res = JSON.parse(res.body)
       successful?(res) ? res : raise_error(res)
     end
 
     def successful?(res)
-      res["error"]? false : true
+      res['error']? false : true
     end
 
     def raise_error(res)
-      raise(HTTP_ERROR[res["error"]["status"]])
+      raise(HTTP_ERROR[res['error']['status']])
     end
   end
 end
